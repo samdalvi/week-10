@@ -9,8 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 url = "https://raw.githubusercontent.com/leontoddjohnson/datasets/refs/heads/main/data/coffee_analysis.csv"
 df = pd.read_csv(url)
 
-# Exercise 1: Linear regression model to predict rating based on 100g_USD
-# Prepare data
+# Exercise 1: 
 X1 = df[['100g_USD']].dropna()
 y1 = df.loc[X1.index, 'rating']
 
@@ -27,7 +26,7 @@ lr_model.fit(X1, y1)
 with open('model_1.pickle', 'wb') as f:
     pickle.dump(lr_model, f)
 
-# Exercise 2: Decision Tree Regressor with 100g_USD and roast
+# Exercise 2: 
 def roast_category(roast_value):
     """Map roast values to numerical categories"""
     if pd.isna(roast_value):
